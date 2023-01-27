@@ -1,0 +1,15 @@
+{#
+  text: ボタン内文字列
+  color: ボタン色(tailwind)
+#}
+{% set text = arg(text, 'Button') %}
+{% set color = arg(color, 'bg-gray-300') %}
+{% set text_color = arg(text_color, 'text-black') %}
+{% set border_color = arg(border_color, 'border-stone-600') %}
+
+<button class="min-w-80px px-4 py-2 
+  {{ color }} {{ text_color }}
+  border {{ border_color }} rounded-md"
+>
+  <span>{% block text %}{% endblock %}</span>
+</button>

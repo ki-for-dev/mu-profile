@@ -1,0 +1,31 @@
+{% extends "layouts/plane.html" %}
+
+{% block content %}
+
+<div class="pt-8">
+  <div class="px-5 pb-8">
+    <div class="">
+      <div>
+        <span>
+          予期しないエラーが発生しました
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  {% include "components/footer_hr.html" %}
+  
+  {% with href="/-/about", text="使い方" %}
+    {% include "components/footer_link_bar.html" %}
+  {% endwith %}
+
+  {% include "components/footer_hr.html" %}
+  
+  {% with href="#", text="トップ" %}
+    {% include "components/footer_link_bar.html" %}
+  {% endwith %}
+  
+  {% include "components/footer_hr.html" %}
+</div>
+
+{% endblock %}

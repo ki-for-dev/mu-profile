@@ -1,0 +1,37 @@
+{% extends "layouts/plane.html" %}
+
+{% block content %}
+
+<div>
+  <div class="mt-4 mb-4 px-4">
+    <div class="p-4 border border-slate-300 rounded-md bg-white">
+      <span>もっと詳しい自分のプロフィールを作る。</span>
+
+      <div class="mt-8">
+        <form action="/twitter-login" method="GET">
+          <div class="flex flex-col justify-center items-center" >
+            {% include "components/twitter_login_button.html" %}
+          </div>
+        </form>  
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    {% include "components/footer_hr.html" %}
+    
+    {% with href="/sample-1", text="使い方" %}
+      {% include "components/footer_link_bar.html" %}
+    {% endwith %}
+    {#
+    {% include "components/footer_hr.html" %}
+
+    {% with href="#", text="トップ" %}
+      {% include "components/footer_link_bar.html" %}
+    {% endwith %}
+    #}
+    {% include "components/footer_hr.html" %}  
+  </div>
+</div>
+
+{% endblock %}

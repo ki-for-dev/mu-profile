@@ -1,0 +1,10 @@
+{% set text = arg(text, 'Button') %}
+{% set color = arg(color, 'bg-white') %}
+{% set text_color = arg(text_color, 'text-black') %}
+{% set border_color = arg(border_color, 'border-stone-600') %}
+
+{% extends "components/button/_base_rounded.html" %}
+
+{% block text %}
+  {{ text }}
+{% endblock %}

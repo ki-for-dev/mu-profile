@@ -1,0 +1,27 @@
+{% extends "layouts/plane.html" %}
+
+{% block content %}
+
+<div>
+  <div class="mt-4 mb-4 px-4">
+    <div class="p-4 border border-slate-300 rounded-md bg-white">
+      <div>
+        <span>「Twitterでログイン」ボタンを押すとプロフィール作成画面に移動します。</span><br>
+        <span>詳しい使い方はサンプルプロフィールをご覧ください。</span>
+      </div>
+      <div class="mt-4 mb-4">
+        <span class="px-2 py-1 border border-slate-800 rounded-md">
+          <a  href="/sample-1">サンプルを見る</a>
+        </span>  
+      </div>
+    </div>
+  </div>
+
+  {% include "components/footer_hr.html" %}
+  {% with href="/", text="トップページ" %}
+    {% include "components/footer_link_bar.html" %}
+  {% endwith %}
+  {% include "components/footer_hr.html" %}
+</div>
+
+{% endblock %}

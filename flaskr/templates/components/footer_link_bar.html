@@ -1,0 +1,11 @@
+{% set href = arg(href, '#') %}
+{% set text = arg(text, 'Link') %}
+<div class="">
+  <div class="py-1 bg-white">
+    <a href="{{ href }}">
+      <div class="py-3 pl-3">
+        <span>{{ text }}</span>
+      </div>
+    </a>  
+  </div>
+</div>

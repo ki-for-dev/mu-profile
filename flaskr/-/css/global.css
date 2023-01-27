@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'jk-marugo';
+	src: url(/-/font/JK-Maru-Gothic-M.otf) format("opentype");
+}
+@font-face {
+	font-family: 'kaiso';
+	src: url(/-/font/Kaisotai-Next-UP-B.otf) format("opentype");
+}
+
+html {
+  font-family: ui-sans-serif;
+}
+
+.bg-twitter {
+  background-color: var(--tw-color);
+}
+
+.min-w-80px {
+  min-width: 80px; 
+}

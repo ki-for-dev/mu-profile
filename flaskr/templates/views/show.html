@@ -1,0 +1,65 @@
+{% extends "layouts/plane.html" %}
+
+{% block content %}
+
+<div>
+  <div class="mt-4 mb-4 px-4">
+    <div class="p-4 border border-slate-300 rounded-md bg-white">
+      <div class="flex flex-col items-center mb-4">
+        {% if user.tw_profile_image_url == None %}
+          <div class="rounded-full w-16 h-16 bg-gray-300"></div>
+        {% else %}
+          <img class="rounded-full w-16 h-16"
+            src="{{ user.tw_profile_image_url }}" alt=""
+          >
+        {% endif %}
+        <div class="my-2">
+          <span class="font-bold text-lg text-slate-700">{{ user.tw_name }}</span>
+        </div>
+        <a href="https://twitter.com/{{ user.tw_screen_id }}">
+          <div class="flex flex-row">
+            {% with size=1.5 %}
+              {% include "components/svg/tw-bird.html" %}
+            {% endwith %}
+            <span class="text-slate-400">@{{ user.tw_screen_id}}</span>
+          </div>  
+        </a>
+      </div>
+      
+      <div class="bg-white rounded-md">
+        {# プロフィール本文 #}
+        <p>
+          {% for line in user.profile_text.splitlines() %}
+            {% if line == '' %}
+              <br>
+            {% elif line|length >= 1 %}
+              {% if line[:2] == '##' %}
+                <!-- h2 -->
+                <div class="">
+                  <span style="overflow-wrap: anywhere; word-break: break-all;"
+                    class="text-lg font-bold">{{ line[2:].strip() }}</span
+                  >
+                </div>
+              {% elif line[:1] == '#' %}
+                <!-- h1 -->
+                <div class="mt-1 mb-1 py-1 pl-2 border border-slate-300 border-l-8 border-l-slate-600">
+                  <span style="overflow-wrap: anywhere; word-break: break-all;"
+                    class="text-2xl font-bold">{{ line[1:].strip() }}</span
+                  >
+                </div>
+              {% elif line == '---' %}
+                <!-- hr -->
+                <div class="h-px border-t border-slate-300"></div>
+              {% else %}
+                <!-- line -->
+                <p style="overflow-wrap: anywhere; word-break: break-all;" class="whitespace-pre-wrap">{{ line }}</p>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </p>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
