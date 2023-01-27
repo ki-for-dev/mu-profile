@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "tailwindcss": "npx tailwindcss -i flaskr/-/css/tailwind-input.css -o flaskr/-/css/styles.css --watch"
+    "tailwindcss-watch": "npx tailwindcss -i flaskr/-/css/tailwind-input.css -o flaskr/-/css/styles.css --watch",
+    "tailwindcss": "npx tailwindcss -i flaskr/-/css/tailwind-input.css -o flaskr/-/css/styles.css"
   },
   "devDependencies": {
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.4"
   }
 }
