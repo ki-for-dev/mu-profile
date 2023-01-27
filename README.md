@@ -4,6 +4,6 @@
 
 ```
 docker-compose up -d
-docker exec -it 0 npm run tailwindcss
-docker exec -it 0 python init_db.py
+docker exec -it mu-profile-master_web_1 npm run tailwindcss
+docker exec -it mu-profile-master_web_1 python init_db.py
 ```
